@@ -18458,7 +18458,7 @@ const data = [
 
 $(function () {
   let parkTotal = $(".parkTotal");
-  parkTotal.text(`台北市共有：${data.length} 座公園。`);
+  parkTotal.text(`台北市共有：${data.length} 座公園`);
 
   let parkValue = $(".parkValue");
   //預設畫面
@@ -18468,7 +18468,7 @@ $(function () {
       str += `
 			<div class="parkName">
 			<h2>${item.pm_name}</h2>
-			<p>${	item.pm_location}</p>
+			<p>${item.pm_location}</p>
 	</div>
 			`;
     }
@@ -18497,12 +18497,13 @@ $(function () {
   }
 
   data.forEach((item) => {
-	
     let inputStr = "";
     if (inputStr === item.pm_location) {
-      return item.pm_location.toLowerCase().indexOf(inputStr.toLowerCase());
-    }else{
-			return data;
-		}
+      let parkLocation = item.pm_location.toLowerCase();
+      let inputStrVal = inputStr.toLowerCase();
+      return parkLocation.indexOf(inputStrVal);
+    } else {
+      return data;
+    }
   });
 });

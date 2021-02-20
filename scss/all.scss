@@ -4,6 +4,7 @@
 body {
   box-sizing: border-box;
   font-family: "微軟正黑體";
+  background-color: #eee;
 }
 
 //layout
@@ -25,9 +26,10 @@ body {
 }
 
 .header {
-  background-image: url("https://images.unsplash.com/photo-1558864255-eced94afc9ec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80");
+  background-image: url("https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
   background-position: center center;
   background-size: cover;
+  padding: 3% 0 5%;
 }
 
 @include pad {
@@ -38,22 +40,36 @@ body {
   width: 100%;
 }
 
-h1 {
-  font-size: 32px;
+h1,
+.subTitle,span {
   font-weight: bold;
   color: #fff;
   text-align: center;
   filter: drop-shadow(0 0 3px rgba(0, 0, 0, 1));
-
+}
+h1 {
+  font-size: 64px;
+  padding: 2% 0;
+  @include phone {
+    font-size: 48px;
+  }
+}
+.subTitle {
+  font-size: 32px;
+  padding-bottom: 1%;
   @include phone {
     font-size: 24px;
   }
+}
+span{
+  font-size: 16px;
+ 
 }
 
 .parkTotal {
   color: #fff;
   text-align: center;
-  font-size: 20px;
+  font-size: 32px;
   filter: drop-shadow(0 0 3px rgba(0, 0, 0, 1));
   padding: 20px 0;
   @include phone {
@@ -82,14 +98,11 @@ h1 {
 .parkValue {
   display: flex;
   flex-wrap: wrap;
-  margin-right: 1%;
-  margin-left: 1%;
+  margin: 0 auto;
   .parkName {
     background-color: #f5f5f5;
     width: 29.33333%;
-    margin-right: 1%;
-    margin-left: 1%;
-    margin-bottom: 2%;
+    margin: 1%;
     padding: 3% 1%;
     border-radius: 6px;
     box-shadow: 0 0 5px #37474f;
@@ -105,7 +118,7 @@ h1 {
     }
     &:hover {
       transform: translateY(-10px);
-      transition: all 0.5s;
+      transition: all 0.5s ease;
       background-color: #e9ffe0;
     }
 
