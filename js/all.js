@@ -18461,6 +18461,7 @@ $(function () {
   parkTotal.text(`台北市共有：${data.length} 座公園`);
 
   let parkValue = $(".parkValue");
+  
   //預設畫面
   let str = "";
   data.forEach((item) => {
@@ -18496,14 +18497,5 @@ $(function () {
     parkValue.html(str);
   }
 
-  data.forEach((item) => {
-    let inputStr = "";
-    if (inputStr === item.pm_location) {
-      let parkLocation = item.pm_location.toLowerCase();
-      let inputStrVal = inputStr.toLowerCase();
-      return parkLocation.indexOf(inputStrVal);
-    } else {
-      return data;
-    }
-  });
+ 
 });
